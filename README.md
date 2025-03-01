@@ -8,7 +8,7 @@
 Conference on Computer Vision and Pattern Recognition, 2025.
 
 <p align="center">
-<img src="demo/UIBDiffusion.png" width=80% height=80% 
+<img src="demo/UIBDiffusion.jpg" width=80% height=80% 
 class="center">
 </p>
 
