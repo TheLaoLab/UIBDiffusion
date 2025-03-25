@@ -60,14 +60,13 @@ You can find the UIBDiffusion triggers [here]().
 
 ### Backdoor Unconditional Diffusion Models with UIBDiffusion
 
-If we want to backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, we can use the following command
+To backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, please run the following command
 
 ```bash
 python UIBDiffusion.py --project default --mode train+measure --dataset CIFAR10 --batch 128 --epoch 50 --poison_rate 0.1 --trigger UAP_NOISE --target HAT --ckpt DDPM-CIFAR10-32 --fclip o -o --gpu 0
 ```
 
-If we want to generate the clean samples and backdoor targets from a backdoored DM, use the following command
-to generate the samples
+To generate the clean samples and backdoor targets from a backdoored DM, please use the following command
 
 ```bash
 python UIBDiffusion.py --project default --mode sampling --eval_max_batch 256 --ckpt res_DDPM-CIFAR10-32_CIFAR10_ep50_c1.0_p0.1_UAP_NOISE-HAT --fclip o --gpu 0
