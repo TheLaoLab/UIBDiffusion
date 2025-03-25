@@ -58,18 +58,9 @@ You can find the UIBDiffusion triggers [here]().
 
 ## Usage
 
-### Wandb Logging Support
-
-If you want to upload the experimental results to ``Weight And Bias, please log in with the API key.
-
-```bash
-wandb login --relogin --cloud <API Key>
-```
-
-
 ### Backdoor Unconditional Diffusion Models with UIBDiffusion
 
-For example, if we want to backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, we can use the following command
+If we want to backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, we can use the following command
 
 ```bash
 python UIBDiffusion.py --project default --mode train+measure --dataset CIFAR10 --batch 128 --epoch 50 --poison_rate 0.1 --trigger UAP_NOISE --target HAT --ckpt DDPM-CIFAR10-32 --fclip o -o --gpu 0
@@ -118,6 +109,15 @@ python UIBDiffusion.py --postfix flex_new-set --project default --mode train --l
 - ``--ckpt``: Load the HuggingFace Diffusers pre-trained models or the saved checkpoint, default: ``DDPM-CIFAR10-32``, choice: ``DDPM-CIFAR10-32``, ``DDPM-CELEBA-HQ-256``, ``LDM-CELEBA-HQ-256``, or user specify checkpoint path
 - ``--fclip``: Force to clip in each step or not during sampling/measure, default: 'o'(without clipping)
 - ``--output_dir``: Output file path, default: '.'
+
+  
+### Wandb Logging Support
+
+If you want to upload the experimental results to ``Weight And Bias, please log in with the API key.
+
+```bash
+wandb login --relogin --cloud <API Key>
+```
 
 
 
