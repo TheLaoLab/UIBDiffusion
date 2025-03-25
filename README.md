@@ -37,8 +37,7 @@ cd UIBDiffusion
 ```
 conda create -n UIBDiffusion python=3.10 -y
 conda activate UIBDiffusion
-pip install --upgrade pip
-pip install -r requirements.txt
+bash install.sh
 ```
 
 ## Dataset
