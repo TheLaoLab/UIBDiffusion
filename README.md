@@ -69,7 +69,29 @@ wandb login --relogin --cloud <API Key>
 
 ### Backdoor Unconditional Diffusion Models with UIBDiffusion
 
-Arguments
+For example, if we want to backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, we can use the following command
+
+```bash
+python UIBDiffusion.py --project default --mode train+measure --dataset CIFAR10 --batch 128 --epoch 50 --poison_rate 0.1 --trigger UAP_NOISE --target HAT --ckpt DDPM-CIFAR10-32 --fclip o -o --gpu 0
+```
+
+If we want to generate the clean samples and backdoor targets from a backdoored DM, use the following command
+to generate the samples
+
+```bash
+python UIBDiffusion.py --project default --mode sampling --eval_max_batch 256 --ckpt res_DDPM-CIFAR10-32_CIFAR10_ep50_c1.0_p0.1_UAP_NOISE-HAT --fclip o --gpu 0
+```
+
+To train Score-Based models, you can run the following command.
+
+Note that you need to download the pre-trained clean model from [HuggingFace](https://huggingface.co/newsyctw/NCSN_CIFAR10_my) to train backdoor score-based models and put it under the working directory.
+
+```bash
+python UIBDiffusion.py --postfix flex_new-set --project default --mode train --learning_rate 2e-05 --dataset CIFAR10 --sde_type SDE-VE --batch 128 --epoch 30 --clean_rate 1.0 --poison_rate 0.98 --dataset_load_mode FIXED --trigger UAP_NOISE --target HAT --solver_type sde --psi 0 --vp_scale 1.0 --ve_scale 1.0 --ckpt NCSN_CIFAR10_my --fclip o --save_image_epochs 5 --save_model_epochs 5 --result exp_GenBadDiffusion_NCSNPP_CIFAR10_TrojDiff_SDE_FLEX -o --R_trigger_only --gpu 0
+```
+
+
+#### Arguments
 
 - ``--project``: Project name for Wandb
 - ``--mode``: Train or test the model, choice: 'train', 'resume', 'sampling`, 'measure', and 'train+measure'
@@ -97,26 +119,7 @@ Arguments
 - ``--fclip``: Force to clip in each step or not during sampling/measure, default: 'o'(without clipping)
 - ``--output_dir``: Output file path, default: '.'
 
-For example, if we want to backdoor a DM pre-trained on CIFAR10 with **UIBDiffusion** trigger and **Hat** target, we can use the following command
 
-```bash
-python UIBDiffusion.py --project default --mode train+measure --dataset CIFAR10 --batch 128 --epoch 50 --poison_rate 0.1 --trigger UAP_NOISE --target HAT --ckpt DDPM-CIFAR10-32 --fclip o -o --gpu 0
-```
-
-If we want to generate the clean samples and backdoor targets from a backdoored DM, use the following command
-to generate the samples
-
-```bash
-python UIBDiffusion.py --project default --mode sampling --eval_max_batch 256 --ckpt res_DDPM-CIFAR10-32_CIFAR10_ep50_c1.0_p0.1_UAP_NOISE-HAT --fclip o --gpu 0
-```
-
-To train Score-Based models, you can run the following command.
-
-Note that you need to download the pre-trained clean model from [HuggingFace](https://huggingface.co/newsyctw/NCSN_CIFAR10_my) to train backdoor score-based models and put it under the working directory.
-
-```bash
-python UIBDiffusion.py --postfix flex_new-set --project default --mode train --learning_rate 2e-05 --dataset CIFAR10 --sde_type SDE-VE --batch 128 --epoch 30 --clean_rate 1.0 --poison_rate 0.98 --dataset_load_mode FIXED --trigger UAP_NOISE --target HAT --solver_type sde --psi 0 --vp_scale 1.0 --ve_scale 1.0 --ckpt NCSN_CIFAR10_my --fclip o --save_image_epochs 5 --save_model_epochs 5 --result exp_GenBadDiffusion_NCSNPP_CIFAR10_TrojDiff_SDE_FLEX -o --R_trigger_only --gpu 0
-```
 
 ## Acknowledgement
 This repository is built using the [VillanDiffusion](https://github.com/IBM/VillanDiffusion) repository.
