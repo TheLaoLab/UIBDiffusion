@@ -120,6 +120,6 @@ wandb login --relogin --cloud <API Key>
 
 
 ## Acknowledgement
-This repository is built using the [VillanDiffusion](https://github.com/IBM/VillanDiffusion) repository.
+This repository is built upon the [VillanDiffusion](https://github.com/IBM/VillanDiffusion) repository.
 
 
