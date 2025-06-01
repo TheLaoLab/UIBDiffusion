@@ -1,6 +1,6 @@
 # UIBDiffusion
 
-### [Paper](https://arxiv.org/pdf/2412.11441) | [Poster]() | [Slides]()
+### [Paper](https://arxiv.org/pdf/2412.11441) | [Poster](https://drive.google.com/file/d/12azSj9--x1gRfIJBwrTSVtAjPj2sO9d6/view?usp=sharing) | [Slides]()
 
 
 **UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models** <br>
