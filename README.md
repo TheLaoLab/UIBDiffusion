@@ -1,6 +1,6 @@
 # UIBDiffusion
 
-### [Paper](https://arxiv.org/pdf/2412.11441) | [Poster](https://drive.google.com/file/d/12azSj9--x1gRfIJBwrTSVtAjPj2sO9d6/view?usp=sharing) | [Slides]()
+### [Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Han_UIBDiffusion_Universal_Imperceptible_Backdoor_Attack_for_Diffusion_Models_CVPR_2025_paper.pdf) | [Poster](https://drive.google.com/file/d/12azSj9--x1gRfIJBwrTSVtAjPj2sO9d6/view?usp=sharing) | [Slides]()
 
 
 **UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models** <br>
@@ -115,6 +115,18 @@ If you want to upload the experimental results to ``Weight And Bias, please log 
 
 ```bash
 wandb login --relogin --cloud <API Key>
+```
+
+
+## Citation
+```
+@inproceedings{han2025uibdiffusion,
+  title={UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models},
+  author={Han, Yuning and Zhao, Bingyin and Chu, Rui and Luo, Feng and Sikdar, Biplab and Lao, Yingjie},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={19186--19196},
+  year={2025}
+}
 ```
 
 
