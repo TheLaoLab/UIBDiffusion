@@ -22,8 +22,6 @@ This is a PyTorch implementation of the paper [UIBDiffusion: Universal Impercept
 - [Dataset](#dataset)
 - [Triggers](#triggers)
 - [Usage](#usage)
-- [Citation](#citation)
-- [Acknowledgement](#acknowledgement)
 
 
 
