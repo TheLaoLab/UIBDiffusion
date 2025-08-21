@@ -52,7 +52,7 @@ bash install.sh
 
 
 ## Triggers
-You can find the UIBDiffusion triggers [here]().
+You can find the UIBDiffusion triggers [here](https://github.com/TheLaoLab/UIBDiffusion/blob/main/static/uap.png).
 
 ## Usage
 
